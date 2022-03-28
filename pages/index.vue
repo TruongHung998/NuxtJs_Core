@@ -1,9 +1,9 @@
-<template>
-  <Tutorial/>
-</template>
-
 <script>
 export default {
-  name: 'IndexPage'
+  fetch ({ redirect }) {
+    return redirect({
+      name: 'hungtruong239810'
+    })
+  }
 }
 </script>
