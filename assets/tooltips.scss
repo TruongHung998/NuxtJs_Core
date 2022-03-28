@@ -1,0 +1,13 @@
+
+@import 'v-tooltip/dist/v-tooltip.css';
+
+.v-popper--theme-tooltip {
+  .v-popper {
+    &__inner {
+      background: $--color-primary-darken;
+      font-size: 14px;
+      line-height: 18px;
+      border-radius: 16px;
+    }
+  }
+}
