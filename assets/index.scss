@@ -8,3 +8,18 @@ body {
   font-size: 16px;
   background: white;
 }
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: $--color-primary-darken;
+  cursor: pointer;
+}
+button {
+  font-family: $--font-family-default;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  border: none
+}
