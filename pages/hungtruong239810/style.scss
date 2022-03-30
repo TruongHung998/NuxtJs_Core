@@ -1,0 +1,54 @@
+.main-title-img {
+  margin: 4rem 0;
+  width: 100%;
+  @media screen and (min-width: 2600px) {
+    margin-top: 8em;
+  }
+}
+.content-style {
+  width: 100%;
+  z-index: 9;
+  margin-right: 1rem;
+}
+.sharp-style {
+  width: 55%;
+  position: absolute;
+  z-index: 10;
+}
+.polygon-style {
+  width: 40%;
+  position: absolute;
+  z-index: 1;
+}
+.content-container {
+  width: 100%;
+  display: flex;
+  position: relative;
+  margin: 5rem 0;
+  .content-1 {
+    @extend .content-style
+  }
+  .sharp-1 {
+    @extend .sharp-style;
+    bottom: 12%;
+    left: 1%;
+  }
+  .polygon-1 {
+    @extend .polygon-style;
+    bottom: 25%;
+    left: -2%;
+  }
+  .content-2 {
+    @extend .content-style;
+  }
+  .sharp-2 {
+    @extend .sharp-style;
+    bottom: 0%;
+    right: 3%;
+  }
+  .polygon-2 {
+    @extend .polygon-style;
+    top: -8%;
+    right: -4%;
+  }
+}

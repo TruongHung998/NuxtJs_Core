@@ -1,8 +1,8 @@
 <template lang="pug">
-  .main-container
+  .main-containe
     .header-container
       img(:src="'/Frame 2.png'").header-image
-    .header-bar
+    .header-bar(:class="{change_color: scrollPosition > 50}")
       .title1 @hungtruong239810
       .menu-container__header-bar
         .group-icon
@@ -28,7 +28,8 @@
 export default {
   data () {
     return {
-      language: true
+      language: true,
+      scrollPosition: null
     }
   },
   computed: {
@@ -39,6 +40,14 @@ export default {
   head () {
     return {
       title: this.title
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.updateScroll);
+  },
+  methods: {
+    updateScroll() {
+      this.scrollPosition = window.scrollY
     }
   }
 }
@@ -89,12 +98,15 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  z-index: 100;
+  &.change_color {
+    background: black;
+  }
   .title1 {
     font-size: 2em;
     color: white;
     font-weight: bold;
-    padding-left: .5rem;
-    padding-top: .5rem;
+    padding-left: 2rem;
     cursor: pointer;
   }
   .menu-container__header-bar {
