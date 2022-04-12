@@ -25,17 +25,14 @@ button {
 }
 
 .container {
-  max-width: 1300px;
+  max-width: 900px;
   margin: 0 auto;
   display: block;
-  @media screen and (max-width: 1500px) {
-    width: 1000px;
-  }
-  @media screen and (max-width: 1200px) {
-    width: 800px;
-  }
-  @media screen and (max-width: 1000px) {
+  @media screen and (max-width: 1024px) {
     width: 600px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 400px;
   }
 }
 .main__container {
