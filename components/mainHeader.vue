@@ -1,5 +1,5 @@
 <template lang="pug">
-  .main-containe
+  .main-container
     .header-container
       img(:src="'/Frame 2.png'").header-image
     .header-bar(:class="{change_color: scrollPosition > 50}")
