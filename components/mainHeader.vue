@@ -70,13 +70,13 @@ export default {
 
 <style lang="scss" scoped>
 .avatar-container {
-  width: 300px;
-  height: 300px;
-  border-radius: 150px;
+  width: 250px;
+  height: 250px;
+  border-radius: 15vw;
   position: absolute;
-  bottom: -38%;
+  bottom: -40%;
   background: white;
-  left: 43%;
+  left: 45%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,7 +91,7 @@ export default {
 }
 
 .main-container {
-  height: 350px;
+  height: 250px;
   width: 100%;
   position: relative;
   @media screen and (min-width: 2600px) {
@@ -100,7 +100,7 @@ export default {
 }
 
 .header-container {
-  height: 350px;
+  height: 250px;
   width: 100%;
 
   .content__header-container {
@@ -111,7 +111,7 @@ export default {
   }
 
   .header-image {
-    height: 350px;
+    height: 250px;
     object-fit: cover;
     width: 100%;
     content: '';
