@@ -18,13 +18,14 @@
                 .title-black THIS IS WHAT I DO BEST
           .content-container-2
             .content
-          .padding-content
+          .content-container-3
+            .content
     .body-content
       .list-content
 </template>
 
 <script>
-import {gsap, TimelineMax, SteppedEase} from 'gsap/all'
+import {gsap, TimelineMax, SteppedEase, Power1} from 'gsap/all'
 
 export default {
   data() {
@@ -76,7 +77,7 @@ export default {
       handler(val) {
         const _height = window.innerHeight
         const _width = window.innerWidth
-        console.log(_width, _height)
+        // TODO: container 1
         if (val > _height * 0.25) {
           gsap.to(".sharp-wrap-height", {
             height: '100vh',
@@ -87,26 +88,55 @@ export default {
             height: '80vh',
           });
         }
-        if (val < _height / 2) {
+        // TODO: container 2
+        if (val < _height * 0.5) {
           gsap.to(".sharp-1", {
             duration: 0.3,
             ease: 'none',
             transform: 'rotate(-4.9998deg) rotateY(-34.6405deg) rotateX(17.2363deg)',
           });
+          gsap.set('.sharp-1', {
+            attr: {src: '/sharp1.png'},
+            ease: 'none'
+          });
         }
-        if (val > _height / 2) {
+        if (val < _height * 0.6 && val > _height * 0.5) {
           gsap.to(".sharp-1", {
             duration: 0.3,
             ease: 'none',
             x: -_width * 0.4,
             transform: 'rotateY(35deg) rotateX(10deg)',
           });
+          gsap.set('.sharp-1', {
+            attr: {src: '/sharp2.png'},
+            ease: 'none'
+          });
         }
-        // gsap.set('.sharp-1', {
-        //   attr: {src: '/sharp2.png'},
-        //   ease: 'none',
-        //   duration: 0.3,
-        // });
+        // TODO: container 3
+        if (val < _height * 1.3 && val > _height * 1.2) {
+          gsap.to(".sharp-1", {
+            duration: 0.3,
+            ease: 'none',
+            x: -_width * 0.4,
+            transform: 'rotateY(35deg) rotateX(10deg)',
+          });
+          gsap.set('.sharp-1', {
+            attr: {src: '/sharp2.png'},
+            ease: 'none'
+          });
+        }
+        if (val < _height * 1.9 && val > _height * 1.4) {
+          gsap.to(".sharp-1", {
+            duration: 0.3,
+            ease: 'none',
+            transform: 'rotate(-4.9998deg) rotateY(-34.6405deg) rotateX(17.2363deg)',
+
+          });
+          gsap.set('.sharp-1', {
+            attr: {src: '/sharp3.png'},
+            ease: 'none'
+          });
+        }
         // case val >= _height + _height * 1.1:
         //   gsap.to(".sharp-1", {
         //     duration: 0.3,

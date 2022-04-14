@@ -69,7 +69,7 @@
     }
 
     .content-container {
-      width: 1400px;
+      width: 100%;
       align-self: center;
       margin: 0 auto;
     }
@@ -136,10 +136,6 @@
       }
     }
 
-    .padding-content {
-      height: 50vh;
-    }
-
     .content-container-2 {
       height: 100vh;
       display: flex;
@@ -148,6 +144,21 @@
 
       .content {
         background: linear-gradient(139.29deg, #CED2BD 7.13%, rgba(255, 255, 255, 0.462347) 77.54%, rgba(255, 255, 255, 0) 78.84%, rgba(250, 250, 248, 0.518068) 78.84%);
+        width: 90%;
+        height: 70%;
+        border-radius: 30px;
+        @extend .content-style
+      }
+    }
+
+    .content-container-3 {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .content {
+        background: linear-gradient(239.82deg, #A6B082 -18.33%, rgba(166, 176, 130, 0) 97.89%);
         width: 90%;
         height: 70%;
         border-radius: 30px;
