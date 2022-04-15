@@ -18,14 +18,29 @@
                 .title-black THIS IS WHAT I DO BEST
           .content-container-2
             .content
+              .container
+              .content-container-2-wrap
+                .wrap-1
+                  .title mình đang làm gì? ...
+                  .text-content {{ '  Hiện tại mình đang là Software engineer tại Eco Pharma. Web App & Mobile cross platform là những thứ mà mình đang làm hiện tại \n  Mình có 2 năm kinh nghiệm trong phát triển phần mềm, đặc biệt là trong ngành chăm sóc khách hàng, ecommerce, medtech' }}
+                .wrap-2
+                  .title-react-native React Native
+                  .text-content {{ '  Mình sử dụng React Native để phát triển ứng dụng trên cả 2 hệ điều hành ios và android \n  Có kinh nghiệm trong việc xử lý thanh toán online,Animation, UI - UX của mobile, notification, tối ưu hiệu năng trên 2 hệ điều hành và nhiều thứ khác ...' }}
+            img(:src="'/polygon1.png'").polygon-1
+            img(:src="'/sticker-1.png'").sticker-1
           .content-container-3
             .content
+              .content-container-3-wrap
+              .container
     .body-content
       .list-content
 </template>
 
 <script>
-import {gsap, TimelineMax, SteppedEase, Power1} from 'gsap/all'
+import {gsap, SteppedEase, TimelineMax} from 'gsap/all'
+import {ScrollTrigger} from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default {
   data() {
@@ -60,114 +75,116 @@ export default {
         opacity: 1,
       })
     }, 1000)
-
+    const _height = window.innerHeight
+    const _width = window.innerWidth
     gsap.to(".sharp-1", {
       transform: 'rotate(-4.9998deg) rotateY(-34.6405deg) rotateX(17.2363deg)',
       duration: 2
     });
 
-    window.addEventListener("scroll", this.onScroll)
-  },
-  beforeDestroy() {
-    window.removeEventListener("scroll", this.onScroll)
-  },
-  watch: {
-    windowTop: {
-      immediate: true,
-      handler(val) {
-        const _height = window.innerHeight
-        const _width = window.innerWidth
-        // TODO: container 1
-        if (val > _height * 0.25) {
-          gsap.to(".sharp-wrap-height", {
-            height: '100vh',
-          });
-        }
-        if (val < _height * 0.25) {
-          gsap.to(".sharp-wrap-height", {
-            height: '80vh',
-          });
-        }
-        // TODO: container 2
-        if (val < _height * 0.5) {
-          gsap.to(".sharp-1", {
-            duration: 0.3,
-            ease: 'none',
-            transform: 'rotate(-4.9998deg) rotateY(-34.6405deg) rotateX(17.2363deg)',
-          });
-          gsap.set('.sharp-1', {
-            attr: {src: '/sharp1.png'},
-            ease: 'none'
-          });
-        }
-        if (val < _height * 0.6 && val > _height * 0.5) {
-          gsap.to(".sharp-1", {
-            duration: 0.3,
-            ease: 'none',
-            x: -_width * 0.4,
-            transform: 'rotateY(35deg) rotateX(10deg)',
-          });
-          gsap.set('.sharp-1', {
-            attr: {src: '/sharp2.png'},
-            ease: 'none'
-          });
-        }
-        // TODO: container 3
-        if (val < _height * 1.3 && val > _height * 1.2) {
-          gsap.to(".sharp-1", {
-            duration: 0.3,
-            ease: 'none',
-            x: -_width * 0.4,
-            transform: 'rotateY(35deg) rotateX(10deg)',
-          });
-          gsap.set('.sharp-1', {
-            attr: {src: '/sharp2.png'},
-            ease: 'none'
-          });
-        }
-        if (val < _height * 1.9 && val > _height * 1.4) {
-          gsap.to(".sharp-1", {
-            duration: 0.3,
-            ease: 'none',
-            transform: 'rotate(-4.9998deg) rotateY(-34.6405deg) rotateX(17.2363deg)',
+    // TODO: container-1
 
-          });
-          gsap.set('.sharp-1', {
-            attr: {src: '/sharp3.png'},
-            ease: 'none'
-          });
-        }
-        // case val >= _height + _height * 1.1:
-        //   gsap.to(".sharp-1", {
-        //     duration: 0.3,
-        //     ease: 'none',
-        //     x: 400,
-        //     transform: 'rotate(-6.0001deg) rotateY(-39.6407deg) rotateX(27.2366deg)',
-        //   });
-        //   gsap.set('.sharp-1', {
-        //     attr: {src: '/sharp2.png'},
-        //     ease: 'none',
-        //     duration: 0.3,
-        //   });
-        // case val >= _height + _height * 1.1:
-        //   gsap.to(".sharp-1", {
-        //     duration: 0.3,
-        //     ease: 'none',
-        //     transform: 'rotateY(35deg) rotateX(10deg)',
-        //   });
-        //   gsap.set('.sharp-1', {
-        //     attr: {src: '/sharp3.png'},
-        //     ease: 'none',
-        //     duration: 0.3,
-        //   });
-        //   break
+    ScrollTrigger.create({
+      trigger: '.content-container-1',
+      start: "top 70%",
+      end: 'bottom 50%',
+      onEnterBack: function () {
+        gsap.to(".sharp-wrap-height", {
+          height: '80vh',
+        });
+        gsap.to(".sharp-1", {
+          duration: 0.3,
+          ease: 'none',
+          transform: 'rotate(-4.9998deg) rotateY(-34.6405deg) rotateX(17.2363deg)',
+        });
+        gsap.set('.sharp-1', {
+          attr: {src: '/sharp1.png'},
+          ease: 'none'
+        });
       }
-    }
-  },
-  methods: {
-    onScroll(e) {
-      this.windowTop = window.top.scrollY /* or: e.target.documentElement.scrollTop */
-    }
+    })
+    // TODO: container-2
+
+    ScrollTrigger.create({
+      trigger: '.content-container-2-wrap',
+      start: "top 70%",
+      end: 'bottom 50%',
+      onEnter: function () {
+        gsap.fromTo(
+            '.wrap-1',
+            {y: 100, autoAlpha: 0},
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              ease: "back",
+              overwrite: "auto"
+            }
+        );
+        gsap.to(".sharp-1", {
+          duration: 0.3,
+          ease: 'none',
+          x: -_width * 0.42,
+          transform: 'rotateY(35deg) rotateX(10deg)',
+        });
+        gsap.set('.sharp-1', {
+          attr: {src: '/sharp2.png'},
+          ease: 'none'
+        });
+        gsap.to(".sharp-wrap-height", {
+          height: '100vh',
+        });
+      },
+      onLeave: function () {
+        gsap.fromTo('.wrap-1', {autoAlpha: 1}, {autoAlpha: 0, overwrite: "auto"});
+      },
+      onEnterBack: function () {
+        gsap.to(".sharp-1", {
+          duration: 0.3,
+          ease: 'none',
+          x: -_width * 0.42,
+          transform: 'rotateY(35deg) rotateX(10deg)',
+        });
+        gsap.set('.sharp-1', {
+          attr: {src: '/sharp2.png'},
+          ease: 'none'
+        });
+        gsap.fromTo(
+            '.wrap-1',
+            {y: -100, autoAlpha: 0},
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              ease: "back",
+              overwrite: "auto"
+            }
+        );
+      },
+      onLeaveBack: function () {
+        gsap.fromTo('.wrap-1', {autoAlpha: 1}, {autoAlpha: 0, overwrite: "auto"});
+      }
+    });
+
+    // TODO: container-3
+
+    ScrollTrigger.create({
+      trigger: '.content-container-3-wrap',
+      start: "top 70%",
+      end: 'bottom 50%',
+      onEnter: function () {
+        gsap.to(".sharp-1", {
+          duration: 0.3,
+          ease: 'none',
+          transform: 'rotate(-4.9998deg) rotateY(-34.6405deg) rotateX(17.2363deg)',
+
+        });
+        gsap.set('.sharp-1', {
+          attr: {src: '/sharp3.png'},
+          ease: 'none'
+        });
+      }
+    })
   }
 }
 </script>

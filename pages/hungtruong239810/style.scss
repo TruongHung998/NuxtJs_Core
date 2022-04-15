@@ -69,7 +69,7 @@
     }
 
     .content-container {
-      width: 100%;
+      width: 1200px;
       align-self: center;
       margin: 0 auto;
     }
@@ -141,13 +141,75 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
 
       .content {
         background: linear-gradient(139.29deg, #CED2BD 7.13%, rgba(255, 255, 255, 0.462347) 77.54%, rgba(255, 255, 255, 0) 78.84%, rgba(250, 250, 248, 0.518068) 78.84%);
-        width: 90%;
+        width: 100%;
         height: 70%;
         border-radius: 30px;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        position: relative;
+
+        .content-container-2-wrap {
+          width: 85%;
+          height: 100%;
+          display: grid;
+          padding-top: 1rem;
+          grid-template-rows: 50% 50%;
+
+          .wrap-1 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 400px;
+            opacity: 0;
+          }
+
+          .title {
+            text-align: center;
+            letter-spacing: 5px;
+            font-weight: bold;
+            color: #375A42;
+            font-size: 1.5rem;
+          }
+
+          .title-react-native {
+            text-align: center;
+            letter-spacing: 5px;
+            font-weight: bold;
+            color: #375A42;
+            font-size: 1.5rem;
+            margin-top: 10%;
+          }
+
+          .text-content {
+            font-weight: 600;
+            padding-top: 1rem;
+            font-size: 1.1rem;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #5F5F5F
+          }
+        }
+
         @extend .content-style
+      }
+
+      .polygon-1 {
+        position: absolute;
+        bottom: 10%;
+        left: -2vw;
+        z-index: 1;
+        width: 300px;
+      }
+
+      .sticker-1 {
+        position: absolute;
+        top: 9%;
+        right: -3%;
+        transform: rotate(270deg);
       }
     }
 
@@ -159,7 +221,7 @@
 
       .content {
         background: linear-gradient(239.82deg, #A6B082 -18.33%, rgba(166, 176, 130, 0) 97.89%);
-        width: 90%;
+        width: 100%;
         height: 70%;
         border-radius: 30px;
         @extend .content-style
