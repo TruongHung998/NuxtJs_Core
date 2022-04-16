@@ -1,9 +1,6 @@
 <template lang="pug">
   .main-container
-    .header-container
-      img(:src="'/Frame 2.png'").header-image
     .header-bar(:class="{change_color: scrollPosition > 50}")
-      .title1 @hungtruong239810
       .menu-container__header-bar
         .group-icon
           button
@@ -25,11 +22,11 @@
               el-dropdown-item Tiếng Anh
         .switch-lang
           i.bx.bx-moon
-          el-switch(v-model='language' active-color="#708E79"
+          el-switch(v-model='language' active-color="#1C96BA"
             inactive-color="#CED2BD").switch--style
           i.bx.bx-sun
-    .avatar-container
-      img(:src="'/avatar.png'").main-avatar
+    //.avatar-container
+    //  img(:src="'/avatar.png'").main-avatar
 </template>
 
 <script>
@@ -91,42 +88,11 @@ export default {
 }
 
 .main-container {
-  height: 250px;
+  height: 60px;
   width: 100%;
-  position: relative;
-  @media screen and (min-width: 2600px) {
-    height: 450px;
-  }
-}
-
-.header-container {
-  height: 250px;
-  width: 100%;
-
-  .content__header-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-
-  .header-image {
-    height: 250px;
-    object-fit: cover;
-    width: 100%;
-    content: '';
-    z-index: -1;
-    @media screen and (min-width: 1600px) {
-      object-position: 0 -200px;
-    }
-    @media screen and (min-width: 1800px) {
-      object-position: 0 -250px;
-    }
-    @media screen and (min-width: 2600px) {
-      height: 450px;
-      object-position: 0 -450px;
-    }
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .header-bar {
@@ -141,7 +107,7 @@ export default {
   z-index: 100;
 
   &.change_color {
-    background: black;
+    background: linear-gradient(301.39deg, #000000 -54.66%, #315875 70.89%, rgba(82, 70, 131, 0.901042) 106.94%, rgba(255, 255, 255, 0) 184.01%);
   }
 
   .title1 {
@@ -157,7 +123,7 @@ export default {
     align-items: center;
     justify-content: flex-end;
     height: 100%;
-    width: 50%;
+    width: 100%;
     padding-right: 1rem;
 
     .icon-button {
