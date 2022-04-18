@@ -243,6 +243,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      position: relative;
 
       .content {
         background: linear-gradient(119.27deg, #073668 -8.25%, #000000 43.26%, #072F58 88.2%);
@@ -253,6 +254,12 @@
         display: grid;
         grid-template-columns: 60% 45%;
         position: relative;
+        @extend .content-style
+      }
+      .sticker-2 {
+        position: absolute;
+        top: 12%;
+        left: -5%;
       }
     }
   }

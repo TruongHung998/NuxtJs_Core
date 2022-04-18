@@ -10,21 +10,18 @@
           button
             i.bx.bxl-linkedin-square.icon-button
         .group-button
+          //el-dropdown.dropdown-button
+          //  .title-button Work
+          //  el-dropdown-menu(slot="dropdown")
+          //    el-dropdown-item Application
+          //    el-dropdown-item Web Application
           el-dropdown.dropdown-button
-            .title-button Work
-            el-dropdown-menu(slot="dropdown")
-              el-dropdown-item Application
-              el-dropdown-item Web Application
-          el-dropdown.dropdown-button
-            .title-button Ngôn ngữ
-            el-dropdown-menu(slot="dropdown")
-              el-dropdown-item Việt Nam
-              el-dropdown-item Tiếng Anh
+            .title-button SaiGon
         .switch-lang
-          i.bx.bx-moon
+          .lang EN
           el-switch(v-model='language' active-color="#1C96BA"
             inactive-color="#CED2BD").switch--style
-          i.bx.bx-sun
+          .lang VN
     //.avatar-container
     //  img(:src="'/avatar.png'").main-avatar
 </template>
@@ -41,7 +38,7 @@ export default {
   },
   computed: {
     title() {
-      return 'My life going on'
+      return '@HungTruong239810'
     }
   },
   head() {
@@ -171,6 +168,11 @@ export default {
       > * {
         margin: 0 1rem;
       }
+    }
+    .lang {
+      color: white;
+      font-weight: bold;
+      font-size: .8rem;
     }
 
     .group-icon {

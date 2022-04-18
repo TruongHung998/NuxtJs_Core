@@ -34,6 +34,7 @@
               .content
                 .content-container-3-wrap
                 .container
+              img(:src="'/sticker-1.png'").sticker-2
     .body-content
       .list-content
 </template>
