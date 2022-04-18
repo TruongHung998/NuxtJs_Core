@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{399:function(n,e,t){"use strict";t.r(e);var r={fetch:function(n){return(0,n.redirect)({name:"hungtruong239810"})}},c=t(50),component=Object(c.a)(r,undefined,undefined,!1,null,null,null);e.default=component.exports}}]);
