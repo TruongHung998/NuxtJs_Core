@@ -2,7 +2,7 @@
 export default {
   fetch ({ redirect }) {
     return redirect({
-      name: 'hungtruong239810'
+      name: 'tigger239810'
     })
   }
 }

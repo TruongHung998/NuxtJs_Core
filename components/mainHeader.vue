@@ -1,27 +1,27 @@
 <template lang="pug">
   .main-container
-    .header-bar(:class="{change_color: scrollPosition > 50}")
-      .menu-container__header-bar
-        .group-icon
-          button
-            i.bx.bxl-facebook-square.icon-button
-          button
-            i.bx.bxl-instagram-alt.icon-button
-          button
-            i.bx.bxl-linkedin-square.icon-button
-        .group-button
-          //el-dropdown.dropdown-button
-          //  .title-button Work
-          //  el-dropdown-menu(slot="dropdown")
-          //    el-dropdown-item Application
-          //    el-dropdown-item Web Application
-          el-dropdown.dropdown-button
-            .title-button SaiGon
-        .switch-lang
-          .lang EN
-          el-switch(v-model='language' active-color="#1C96BA"
-            inactive-color="#CED2BD").switch--style
-          .lang VN
+    //.header-bar(:class="{change_color: scrollPosition > 50}")
+    //  .menu-container__header-bar
+    //    .group-icon
+    //      button
+    //        i.bx.bxl-facebook-square.icon-button
+    //      button
+    //        i.bx.bxl-instagram-alt.icon-button
+    //      button
+    //        i.bx.bxl-linkedin-square.icon-button
+    //    .group-button
+    //      //el-dropdown.dropdown-button
+    //      //  .title-button Work
+    //      //  el-dropdown-menu(slot="dropdown")
+    //      //    el-dropdown-item Application
+    //      //    el-dropdown-item Web Application
+    //      el-dropdown.dropdown-button
+    //        .title-button SaiGon
+    //    .switch-lang
+    //      .lang EN
+    //      el-switch(v-model='language' active-color="#1C96BA"
+    //        inactive-color="#CED2BD").switch--style
+    //      .lang VN
     //.avatar-container
     //  img(:src="'/avatar.png'").main-avatar
 </template>
@@ -38,7 +38,7 @@ export default {
   },
   computed: {
     title() {
-      return '@HungTruong239810'
+      return '@Tigger239810'
     }
   },
   head() {
