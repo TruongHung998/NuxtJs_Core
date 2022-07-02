@@ -9,6 +9,27 @@
   position: relative;
 }
 
+.dot-foreground {
+
+}
+
+.dot-background {
+  width: 5px;
+  height: 5px;
+  border: 2px solid #CCDBF8;
+  border-radius: 20px;
+}
+
+.line-foreground {
+  width: 4px;
+  background-color: $--color-line;
+}
+
+.line-background {
+  width: 1px;
+  background-color: #CCDBF8;
+}
+
 .intro-container {
   width: 100%;
   position: relative;
@@ -20,14 +41,20 @@
     vertical-align: baseline;
 
     .line-absolute {
+      @extend .line-foreground;
       height: 50vh;
-      width: 4px;
-      position: absolute;
-      background-color: $--color-line;
-      top: 100vh;
       margin-left: 1rem;
-      left: 5vw;
     }
+
+    .absolute-view {
+      position: absolute;
+      width: 90vw;
+      height: 100vh;
+      top: 100vh;
+      left: 5%;
+      bottom: 0;
+    }
+
     .sharp-wrap {
       z-index: 10;
       display: block;
@@ -198,11 +225,35 @@
           align-items: center;
           justify-content: center;
 
-          .wrap-1 {
+          .wrap-absolute {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            opacity: 0;
+
+            .wrap-line {
+              height: 100%;
+
+              .line-absolute {
+                @extend .line-background;
+                height: 19%;
+                margin-top: .5rem;
+              }
+
+              .dot-absolute {
+                @extend .dot-background;
+                margin-left: 11px;
+                margin-top: .5rem;
+              }
+            }
+            .content-box {
+              .content-box-1 {
+                background: #FFF;
+                width: 80%;
+                height: 10%
+              }
+            }
           }
 
           .title {

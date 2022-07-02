@@ -28,6 +28,7 @@
 
 <script>
 import {gsap} from "gsap";
+import {killTriggerGsap} from "@/helper/util";
 
 export default {
   data() {
@@ -38,7 +39,7 @@ export default {
   },
   computed: {
     title() {
-      return '@Tigger239810'
+      return 'Portfolio'
     }
   },
   head() {

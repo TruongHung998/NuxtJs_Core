@@ -18,7 +18,7 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/packman.png' },
+      { rel: 'icon', type: 'image/x-icon', href: '/laptop.png' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap' },
       { rel: 'stylesheet', href: 'https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' }
     ]

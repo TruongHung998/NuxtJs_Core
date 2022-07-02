@@ -2,6 +2,12 @@ import {gsap, SteppedEase, TimelineMax} from "gsap/all";
 import {ScrollTrigger} from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
+export const killTriggerGsap = () => {
+    ScrollTrigger.getById('trigger1').kill(true)
+    ScrollTrigger.getById('trigger2').kill(true)
+    ScrollTrigger.getById('trigger3').kill(true)
+}
+
 export const handleHomeAnimation = () => {
     var tl = new TimelineMax({
         paused: true
@@ -38,8 +44,8 @@ export const handleHomeAnimation = () => {
     });
 
     // TODO: container-1
-
     ScrollTrigger.create({
+        id: 'trigger1',
         trigger: '.content-container-1',
         start: "top 70%",
         end: 'bottom 50%',
@@ -68,6 +74,7 @@ export const handleHomeAnimation = () => {
     // TODO: container-2
 
     ScrollTrigger.create({
+        id: 'trigger2',
         trigger: '.content-container-2-wrap',
         start: "top 70%",
         end: 'bottom 50%',
@@ -83,17 +90,17 @@ export const handleHomeAnimation = () => {
                 duration: 0.2,
                 autoAlpha: 0
             });
-            gsap.fromTo(
-                '.wrap-1',
-                {y: 100, autoAlpha: 0},
-                {
-                    duration: 1.25,
-                    y: 0,
-                    autoAlpha: 1,
-                    ease: "back",
-                    overwrite: "auto"
-                }
-            );
+            // gsap.fromTo(
+            //     '.wrap-1',
+            //     {y: 100, autoAlpha: 0},
+            //     {
+            //         duration: 1.25,
+            //         y: 0,
+            //         autoAlpha: 1,
+            //         ease: "back",
+            //         overwrite: "auto"
+            //     }
+            // );
             gsap.to(".sharp-1", {
                 duration: 0.4,
                 ease: 'none',
@@ -106,7 +113,7 @@ export const handleHomeAnimation = () => {
             });
         },
         onLeave: function () {
-            gsap.fromTo('.wrap-1', {autoAlpha: 1}, {autoAlpha: 0, overwrite: "auto"});
+            // gsap.fromTo('.wrap-1', {autoAlpha: 1}, {autoAlpha: 0, overwrite: "auto"});
         },
         onEnterBack: function () {
             gsap.to(".item-2", {
@@ -130,17 +137,17 @@ export const handleHomeAnimation = () => {
                 attr: {src: '/sharp2.png'},
                 ease: 'none'
             });
-            gsap.fromTo(
-                '.wrap-1',
-                {y: -100, autoAlpha: 0},
-                {
-                    duration: 1.25,
-                    y: 0,
-                    autoAlpha: 1,
-                    ease: "back",
-                    overwrite: "auto"
-                }
-            );
+            // gsap.fromTo(
+            //     '.wrap-1',
+            //     {y: -100, autoAlpha: 0},
+            //     {
+            //         duration: 1.25,
+            //         y: 0,
+            //         autoAlpha: 1,
+            //         ease: "back",
+            //         overwrite: "auto"
+            //     }
+            // );
         },
         onLeaveBack: function () {
         }
@@ -149,6 +156,7 @@ export const handleHomeAnimation = () => {
     // TODO: container-3
 
     ScrollTrigger.create({
+        id: 'trigger3',
         trigger: '.content-container-3-wrap',
         start: "top 70%",
         end: 'bottom 50%',
