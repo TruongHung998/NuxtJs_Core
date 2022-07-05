@@ -18,11 +18,11 @@
           .content-container-1
             .wrap-title
               .title-1.line1
-                .title-black-1 ANONYMUS &nbsp
-                .title-color ANONYMUS
+                .title-black-1 I AM  &nbsp
+                .title-color HUNGTRUONG
                 .title-black-1  &nbsp AND
               .title-2.line2
-                .title-black ANONYMUS IS WHAT I ANONYMUS BEST
+                .title-black THIS IS WHAT I DO BEST
           .wrap-container
             .content-container-2
               .content
@@ -30,13 +30,7 @@
                 .content-container-2-wrap
                   .wrap-absolute
                     .wrap-line
-                      .line-absolute
-                      .dot-absolute
-                      .line-absolute
-                      .dot-absolute
-                      .line-absolute
-                      .dot-absolute
-                      .line-absolute
+                      img(:src="'/curveline.png'").curve-line
                     .content-box
                       .content-box-1
             //.content-container-3
